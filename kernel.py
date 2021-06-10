@@ -62,6 +62,7 @@ class Kernel_obj:
 		return density_at_mean
 
 
+########## Repetitive ##########
 class distance_obj:
 	def __init__(self):
 		return

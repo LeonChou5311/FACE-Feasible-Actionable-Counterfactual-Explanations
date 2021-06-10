@@ -9,10 +9,13 @@ from sklearn import preprocessing
 import utils
 
 def load_synthetic_one_hot():
+	'''
+	Load data from synthetic_one_hot. Randomly sample 2000 instances from the orginal data.
+	'''
 	dataPath = "../robustnessExperiments/data/synthetic_exp4/synthetic_one_hot"
+	data = pk.load(open(dataPath, 'rb')).data_frame_kurz
 	sample_ids = np.random.choice(np.arange(0, len(data)), 2000)
 	data_samples = data.iloc[sample_ids]
-	data = pk.load(open(dataPath, 'rb')).data_frame_kurz
 	FEATURE_COLUMNS = ['x1', 'x2', 'x3']
 	TARGET_COLUMNS = ['y']
 	return data_samples, FEATURE_COLUMNS, TARGET_COLUMNS
